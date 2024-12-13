@@ -5,22 +5,24 @@ import ME from "../../assets/murtee.png";
 import HeaderSocial from "./HeaderSocial";
 const Header = () => {
   return (
-    <header>
-      <div className="container header_container">
-        <h5>Hello I'm</h5>
-        <h1>Murtessa Jabesa</h1>
-        <div className="text-light">Fullstack Developer</div>
-        <CTA />
-        <HeaderSocial />
-        <div className="me">
-          <img src={ME} alt="" />
+    <section id="home">
+      <header>
+        <div className="container header_container">
+          <h5>Hello I'm</h5>
+          <h1>Murtessa Jabesa</h1>
+          <div className="text-light">Fullstack Developer</div>
+          <CTA />
+          <HeaderSocial />
+          <div className="me">
+            <img src={ME} alt="" />
+          </div>
+          <a href="#contact" className="scroll_down">
+            {" "}
+            Scroll Down
+          </a>
         </div>
-        <a href="#contact" className="scroll_down">
-          {" "}
-          Scroll Down
-        </a>
-      </div>
-    </header>
+      </header>
+    </section>
   );
 };
 export default Header;
