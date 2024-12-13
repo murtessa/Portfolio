@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "./contact.css";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -42,6 +43,18 @@ const Contact = () => {
             <h5>murtessajabesa65@gmail.com</h5>
             <a
               href="mailto:murtessajabesa65@gmail.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Send Message
+            </a>
+          </article>
+          <article className="contact_option">
+            <BsLinkedin className="contact_option-icon" />
+            <h4>Linkedin</h4>
+            <h5>Murtessa Jabesa</h5>
+            <a
+              href="http://linkedin.com/in/murtessa-jabesa-a36998295"
               target="_blank"
               rel="noreferrer noopener"
             >
