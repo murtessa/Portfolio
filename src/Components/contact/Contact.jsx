@@ -1,9 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./contact.css";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
-import { useRef } from "react";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -15,10 +13,10 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "service_2jee53d",
-        "template_bfegou7",
+        process.env.REACT_APP_EMAILJS_SERVICE_ID, // Environment variable
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID, // Environment variable
         form.current,
-        "TfO4ie_HC_el5VH3Q"
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY // Environment variable
       );
       setFeedbackMessage("Your message was sent successfully!");
       e.target.reset();
@@ -30,6 +28,7 @@ const Contact = () => {
       setFeedbackMessage("");
     }, 5000);
   };
+
   return (
     <section id="contact">
       <h5>Get In Touch</h5>
@@ -41,8 +40,8 @@ const Contact = () => {
             <MdOutlineMailOutline className="contact_option-icon" />
             <h4>Email</h4>
             <h5>murtessajabesa65@gmail.com</h5>
-            <a href="mailto:murtessajabesa65@gmail.com " target="_blank">
-              Send Message{" "}
+            <a href="mailto:murtessajabesa65@gmail.com" target="_blank">
+              Send Message
             </a>
           </article>
           <article className="contact_option">
@@ -50,7 +49,7 @@ const Contact = () => {
             <h4>WhatsApp</h4>
             <h5>+251961806851</h5>
             <a href="https://wa.me/+251961806851" target="_blank">
-              Send Message{" "}
+              Send Message
             </a>
           </article>
         </div>
@@ -59,7 +58,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              placeholder="Your Full Nmae"
+              placeholder="Your Full Name"
               required
             />
             <input
@@ -86,4 +85,5 @@ const Contact = () => {
     </section>
   );
 };
+
 export default Contact;
